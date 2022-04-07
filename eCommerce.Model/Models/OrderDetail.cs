@@ -12,17 +12,19 @@ namespace eCommerce.Model.Models
     public class OrderDetail
     {
         [Key]
-        public int OrderID { get; set; }
+        [Column(Order = 1)]
+        public int OrderID { set; get; }
 
         [Key]
-        public int ProductID { get; set; }
+        [Column(Order = 2)]
+        public int ProductID { set; get; }
 
-        public int Quantity { get; set; }
+        public int Quantitty { set; get; }
 
         [ForeignKey("OrderID")]
-        public virtual Order Order { get; set; }
+        public virtual Order Order { set; get; }
 
         [ForeignKey("ProductID")]
-        public virtual Product Product { get; set; }
+        public virtual Product Product { set; get; }
     }
 }

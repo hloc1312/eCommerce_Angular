@@ -27,7 +27,6 @@ namespace eCommerce.Model.Models
         public string Facebook { get; set; }
 
         [Required]
-        [MaxLength(50)]
         public bool Status { get; set; }
 
         public int? DisplayOrder { get; set; }
