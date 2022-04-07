@@ -65,8 +65,21 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reprositories\FooterRepository.cs" />
+    <Compile Include="Reprositories\MenuGroupRepository.cs" />
+    <Compile Include="Reprositories\MenuRepository.cs" />
+    <Compile Include="Reprositories\OrderDetailRepository.cs" />
+    <Compile Include="Reprositories\OrderRepository.cs" />
+    <Compile Include="Reprositories\PageRepository.cs" />
+    <Compile Include="Reprositories\PostRepository.cs" />
     <Compile Include="Reprositories\ProductCategoryRepository.cs" />
     <Compile Include="Reprositories\ProductRepository.cs" />
+    <Compile Include="Reprositories\ProductTagRepository.cs" />
+    <Compile Include="Reprositories\SlideRepository.cs" />
+    <Compile Include="Reprositories\SupportOnlineRepository.cs" />
+    <Compile Include="Reprositories\SystemConfigRepository.cs" />
+    <Compile Include="Reprositories\TagRepository.cs" />
+    <Compile Include="Reprositories\VisitorStatisticRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
