@@ -1,0 +1,106 @@
+﻿ <!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Danh sách người dùng</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="/admin">Trang chủ</a></li>
+
+                    <li class="breadcrumb-item active">Danh sách người dùng</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Danh mục quyền</h3>
+
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row" style="padding-left:20px">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <!--<input type="text" placeholder="Tìm kiếm..." ng-model="keyword" class="form-control" />
+                        <span class="input-group-btn">-->
+                        <!--Binding-->
+                        <!--<button class="btn btn-info" type="button" ng-click="search()">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </span>-->
+                        <input type="text" id="txtSearch" ng-model="filterExpression" class="form-control" placeholder="Nhập từ khóa..." />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <!--<button class="btn btn-success" ui-sref="add_application_role">Thêm mới</button>
+                    <button class="btn btn-danger" ng-click="deleteMultiple()" id="btnDelete" disabled>Xóa</button>-->
+                    <button class="btn btn-success pull-right" ui-sref="add_application_user"><i class="fa fa-plus"></i> Thêm mới</button>
+                </div>
+            </div>
+            <!--Product Category Table-->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Tên người dùng</th>
+                                    <th>Tài khoản</th>
+                                    <th>Email</th>
+                                    <th style="width:10%"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in data | filter:filterExpression">
+                                    <td><a ui-sref="edit_application_user({id:item.Id})">{{item.FullName}}</a></td>
+                                    <td><a ui-sref="edit_application_user({id:item.Id})">{{item.UserName}}</a></td>
+                                    <td>{{item.Email}}</td>
+                                    <td>
+                                        <a ui-sref="edit_application_user({id:item.Id})" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
+                                        <button class="btn btn-sm btn-danger" ng-click="deleteItem(item.Id)"><i class="fa fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="6"> <span class="float-right">Trang: {{page}}</span></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <div ng-if="loading">
+                            <div class="col-xs-4"></div>
+                            <div class="col-xs-4">
+                                <i class="fa fa-refresh fa-4x fa-spin"></i> <label class="label label-primary">Đang tải...</label>
+                            </div>
+                            <div class="col-xs-4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+            <!--Directive-->
+            <custom-pager page="{{page}}" custom-path="{{customPath}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="search(page)"></custom-pager>
+        </div>
+        <!-- /.card-footer-->
+    </div>
+    <!-- /.card -->
+</section>
+<!-- /.content -->

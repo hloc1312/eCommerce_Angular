@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace eCommerce.Data.Reprositories
 {
-    public interface IPageRepository
+    public interface IPageRepository : IRepository<Page>
     {
     }
 

@@ -1,0 +1,50 @@
+﻿<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Thêm mới nhóm</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="/admin">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a ui-sref="categories">Danh mục nhóm</a></li>
+                    <li class="breadcrumb-item active">Thêm mới</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<section class="content">
+    <div class="card card-info">
+        <div class="card-header">
+            <h3 class="card-title">{{group.Name}}</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form class="form-horizontal" role="form" novalidate name="frmAddAppGroup" ng-submit="addAppGroup()">
+            <div class="card-body">
+                <div class="form-group row" ng-class="{ 'has-error' : frmAddAppGroup.name.$invalid && !frmAddAppGroup.name.$pristine }">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Tên nhóm</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="name" required reqired-message="Tên nhóm không được để trống." ng-model="group.Name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <label ng-repeat="role in roles" class="mr-3">
+                            <input type="checkbox" checklist-model="group.Roles" checklist-value="role"> {{role.Description}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+                <button ui-sref="application_groups" class="btn btn-default ">Quay lại</button>
+                <button type="submit" class="btn btn-success float-right" ng-disabled="frmAddAppGroup.$invalid">Lưu</button>
+            </div>
+            <!-- /.card-footer -->
+        </form>
+    </div>
+</section>

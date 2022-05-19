@@ -1,0 +1,102 @@
+﻿ <!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Trang chủ</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Blank Page</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+    <!-- Default box -->
+    <!--<div>
+        <canvas id="myChart"></canvas>
+    </div>-->
+    <div class="card card-success">
+        <div class="card-header">
+            <h3 class="card-title">Thống kê doanh thu năm 2022</h3>
+
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="chart">
+                <canvas id="myChart2" style="width:100%; height: 500px"></canvas>
+
+                <script>
+                    var ctx = document.getElementById("myChart2").getContext("2d");
+                    console.log('hi', ctx)
+                    var myChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11","Tháng 12"],
+                            datasets: [{
+                                label: 'Thống kê doanh thu 2022',
+                                data: [12, 19, 3, 5, 2, 3, 6,7,2,18,6,18],
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(255, 99, 132, 0.2)',
+                                ],
+                                borderColor: [
+                                    'rgba(255,99,132,1)',
+                                    'rgba(255,99,132,1)',
+                                    'rgba(255,99,132,1)',
+                                    'rgba(255,99,132,1)',
+                                    'rgba(255,99,132,1)',
+                                    'rgba(255,99,132,1)',
+                                    'rgba(255,99,132,1)',
+                                    'rgba(255,99,132,1)',
+                                    'rgba(255,99,132,1)',
+                                    'rgba(255,99,132,1)',
+                                    'rgba(255,99,132,1)',
+                                    'rgba(255,99,132,1)',
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero: true
+                                    }
+                                }]
+                            }
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+</section>
+
+
+<!-- /.content -->

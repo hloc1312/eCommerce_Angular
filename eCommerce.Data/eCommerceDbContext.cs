@@ -1,4 +1,5 @@
 ﻿using eCommerce.Model.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -8,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace eCommerce.Data
 {
-    public class eCommerceDbContext : DbContext
+    public class eCommerceDbContext : IdentityDbContext<ApplicationUser>
     {
         // nhận connectionString (AppConfig)
-        public eCommerceDbContext() : base("eCommerceConnection")
+        public eCommerceDbContext() : base("DbConnectAngularShop")
         {
             this.Configuration.LazyLoadingEnabled = false;
         }
@@ -35,10 +36,27 @@ namespace eCommerce.Data
         public DbSet<SystemConfig> SystemConfigs { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<VisitorStatistic> VisitorStatistics { get; set; }
+        public DbSet<Error> Errors { get; set; }
+        public DbSet<ContactDetail> ContactDetails { get; set; }
+        public DbSet<Feedback> Feedbacks { get; set; }
+
+        public DbSet<ApplicationGroup> ApplicationGroups { set; get; }
+        public DbSet<ApplicationRole> ApplicationRoles { set; get; }
+        public DbSet<ApplicationRoleGroup> ApplicationRoleGroups { set; get; }
+        public DbSet<ApplicationUserGroup> ApplicationUserGroups { set; get; }
+
+        public static eCommerceDbContext Create()
+        {
+            return new eCommerceDbContext();
+        }
 
         // ghi đè DbContext
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId }).ToTable("ApplicationUserRoles");
+            modelBuilder.Entity<IdentityUserLogin>().HasKey(i => i.UserId).ToTable("ApplicationUserLogins");
+            modelBuilder.Entity<IdentityRole>().ToTable("ApplicationRoles");
+            modelBuilder.Entity<IdentityUserClaim>().HasKey(i => i.UserId).ToTable("ApplicationUserClaims");
         }
     }
 }

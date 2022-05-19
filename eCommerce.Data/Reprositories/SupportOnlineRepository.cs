@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace eCommerce.Data.Reprositories
 {
-    public interface ISupportOnlineRepository
+    public interface ISupportOnlineRepository : IRepository<SupportOnline>
     { }
 
     public class SupportOnlineRepository : RepositoryBase<SupportOnline>, ISupportOnlineRepository

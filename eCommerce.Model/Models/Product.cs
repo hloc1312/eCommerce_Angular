@@ -35,7 +35,7 @@ namespace eCommerce.Model.Models
         public string Image { get; set; }
 
         [Column(TypeName = "xml")]
-        public string MoreImage { get; set; }
+        public string MoreImages { get; set; }
 
         public decimal Price { get; set; }
         public decimal? PromotionPrice { get; set; }
@@ -48,5 +48,11 @@ namespace eCommerce.Model.Models
         public bool? HomeFlag { get; set; }
         public bool? HotFlag { get; set; }
         public int? ViewCount { get; set; }
+        public string Tags { get; set; }
+        public int Quantity { get; set; }
+
+        public decimal OriginalPrice { get; set; }
+
+        public virtual IEnumerable<ProductTag> ProductTags { get; set; }
     }
 }

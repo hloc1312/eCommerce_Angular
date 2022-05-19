@@ -1,4 +1,5 @@
-﻿using System;
+﻿using eCommerce.Model.Abstract;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 namespace eCommerce.Model.Models
 {
     [Table("Posts")]
-    public class Post
+    public class Post : Auditable
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -40,5 +41,7 @@ namespace eCommerce.Model.Models
 
         [ForeignKey("CategoryID")]
         public virtual PostCategory PostCategory { get; set; }
+
+        public virtual IEnumerable<PostTag> PostTags { get; set; }
     }
 }

@@ -29,7 +29,7 @@ namespace eCommerce.Model.Models
         public string URL { get; set; }
 
         public int? DisplayOrder { get; set; }
-
+        public string Content { get; set; }
         public bool Status { get; set; }
     }
 }

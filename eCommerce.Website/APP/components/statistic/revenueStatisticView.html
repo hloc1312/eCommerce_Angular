@@ -1,0 +1,91 @@
+﻿<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Thống kê doanh số</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>                    
+                    <li class="breadcrumb-item"><a ui-sref="statistic_revenue">Thống kê</a></li>
+                    <li class="breadcrumb-item active">Thống kê doanh số</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+<div class="rowFlex">
+    <!-- Left col -->
+    <section class="col-lg-7">
+        <!-- Custom tabs (Charts with tabs)-->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <i class="fas fa-chart-pie mr-1"></i>
+                    Sales
+                </h3>
+                <div class="card-tools">
+                    <ul class="nav nav-pills ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Doanh thu</a>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- /.card-header -->
+            <div class="card-body">
+                <div class="tab-content p-0">
+                    <!-- Morris chart - Sales -->
+                    <canvas id="bar" class="chart chart-line" chart-colors="colors" chart-data="chartdata" chart-labels="labels" chart-series="series"></canvas>
+                    
+                </div>
+            </div><!-- /.card-body -->
+        </div>
+    </section>
+    <!-- /.Left col -->
+    <!-- right col (We are only adding the ID to make the widgets sortable)-->
+    <section class="col-lg-5">
+
+        <!-- Map card -->
+        <div class="card ">
+            <div class="card-header border-0">
+                <h3 class="card-title">
+                    <i class="fas fa-map-marker-alt mr-1"></i>
+                    Dữ liệu thống kê
+                </h3>
+                <!-- card tools -->
+                <!-- /.card-tools -->
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Ngày</th>
+                            <th>Doanh số </th>
+                            <th>Lợi nhuận</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in tabledata">
+                            <td>
+                                {{item.Date | date}}
+                            </td>
+                            <td>
+                                {{item.Revenues | number}}
+                            </td>
+                            <td>
+                                {{item.Benefit | number}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body-->
+            <div class="card-footer bg-transparent">
+
+                <!-- /.row -->
+            </div>
+        </div>
+        <!-- /.card -->
+    </section>
+    <!-- right col -->
+</div>

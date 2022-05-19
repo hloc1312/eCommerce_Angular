@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -35,10 +34,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -59,19 +64,84 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\202204071536154_InitialDB.cs" />
-    <Compile Include="Migrations\202204071536154_InitialDB.designer.cs">
-      <DependentUpon>202204071536154_InitialDB.cs</DependentUpon>
+    <Compile Include="Migrations\202204251805568_Initial.cs" />
+    <Compile Include="Migrations\202204251805568_Initial.designer.cs">
+      <DependentUpon>202204251805568_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204280710552_AddTagProduct.cs" />
+    <Compile Include="Migrations\202204280710552_AddTagProduct.designer.cs">
+      <DependentUpon>202204280710552_AddTagProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204291359038_UpdateFieldMoreImage.cs" />
+    <Compile Include="Migrations\202204291359038_UpdateFieldMoreImage.designer.cs">
+      <DependentUpon>202204291359038_UpdateFieldMoreImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204291427050_ChangeFieldMoreImage.cs" />
+    <Compile Include="Migrations\202204291427050_ChangeFieldMoreImage.designer.cs">
+      <DependentUpon>202204291427050_ChangeFieldMoreImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204291428408_MoreImagesProduct.cs" />
+    <Compile Include="Migrations\202204291428408_MoreImagesProduct.designer.cs">
+      <DependentUpon>202204291428408_MoreImagesProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205060627479_AddContentSlides.cs" />
+    <Compile Include="Migrations\202205060627479_AddContentSlides.designer.cs">
+      <DependentUpon>202205060627479_AddContentSlides.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205100859465_AddQuantityProduct.cs" />
+    <Compile Include="Migrations\202205100859465_AddQuantityProduct.designer.cs">
+      <DependentUpon>202205100859465_AddQuantityProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205120658234_ContactDetail.cs" />
+    <Compile Include="Migrations\202205120658234_ContactDetail.designer.cs">
+      <DependentUpon>202205120658234_ContactDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205120833439_Feedback.cs" />
+    <Compile Include="Migrations\202205120833439_Feedback.designer.cs">
+      <DependentUpon>202205120833439_Feedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205120834390_FeedbackUpdate.cs" />
+    <Compile Include="Migrations\202205120834390_FeedbackUpdate.designer.cs">
+      <DependentUpon>202205120834390_FeedbackUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205160953280_AddCustomerID.cs" />
+    <Compile Include="Migrations\202205160953280_AddCustomerID.designer.cs">
+      <DependentUpon>202205160953280_AddCustomerID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205161420421_UpdateTableIdentity.cs" />
+    <Compile Include="Migrations\202205161420421_UpdateTableIdentity.designer.cs">
+      <DependentUpon>202205161420421_UpdateTableIdentity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205161432563_AddGroupUser.cs" />
+    <Compile Include="Migrations\202205161432563_AddGroupUser.designer.cs">
+      <DependentUpon>202205161432563_AddGroupUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205181644420_addOPrice.cs" />
+    <Compile Include="Migrations\202205181644420_addOPrice.Designer.cs">
+      <DependentUpon>202205181644420_addOPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205181741055_AddStoreProcedure.cs" />
+    <Compile Include="Migrations\202205181741055_AddStoreProcedure.Designer.cs">
+      <DependentUpon>202205181741055_AddStoreProcedure.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reprositories\ApplicationGroupRepository.cs" />
+    <Compile Include="Reprositories\ApplicationRoleGroupRepository.cs" />
+    <Compile Include="Reprositories\ApplicationRoleRepository.cs" />
+    <Compile Include="Reprositories\ApplicationUserGroupRepository.cs" />
+    <Compile Include="Reprositories\ContactDetailRepository.cs" />
+    <Compile Include="Reprositories\ErrorRepository.cs" />
+    <Compile Include="Reprositories\FeedbackRepository.cs" />
     <Compile Include="Reprositories\FooterRepository.cs" />
     <Compile Include="Reprositories\MenuGroupRepository.cs" />
     <Compile Include="Reprositories\MenuRepository.cs" />
     <Compile Include="Reprositories\OrderDetailRepository.cs" />
     <Compile Include="Reprositories\OrderRepository.cs" />
     <Compile Include="Reprositories\PageRepository.cs" />
+    <Compile Include="Reprositories\PostCategoryRepository.cs" />
     <Compile Include="Reprositories\PostRepository.cs" />
+    <Compile Include="Reprositories\PostTagRepository.cs" />
     <Compile Include="Reprositories\ProductCategoryRepository.cs" />
     <Compile Include="Reprositories\ProductRepository.cs" />
     <Compile Include="Reprositories\ProductTagRepository.cs" />
@@ -96,17 +166,51 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202204071536154_InitialDB.resx">
-      <DependentUpon>202204071536154_InitialDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202204251805568_Initial.resx">
+      <DependentUpon>202204251805568_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204280710552_AddTagProduct.resx">
+      <DependentUpon>202204280710552_AddTagProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204291359038_UpdateFieldMoreImage.resx">
+      <DependentUpon>202204291359038_UpdateFieldMoreImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204291427050_ChangeFieldMoreImage.resx">
+      <DependentUpon>202204291427050_ChangeFieldMoreImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204291428408_MoreImagesProduct.resx">
+      <DependentUpon>202204291428408_MoreImagesProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205060627479_AddContentSlides.resx">
+      <DependentUpon>202205060627479_AddContentSlides.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205100859465_AddQuantityProduct.resx">
+      <DependentUpon>202205100859465_AddQuantityProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205120658234_ContactDetail.resx">
+      <DependentUpon>202205120658234_ContactDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205120833439_Feedback.resx">
+      <DependentUpon>202205120833439_Feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205120834390_FeedbackUpdate.resx">
+      <DependentUpon>202205120834390_FeedbackUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205160953280_AddCustomerID.resx">
+      <DependentUpon>202205160953280_AddCustomerID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205161420421_UpdateTableIdentity.resx">
+      <DependentUpon>202205161420421_UpdateTableIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205161432563_AddGroupUser.resx">
+      <DependentUpon>202205161432563_AddGroupUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205181644420_addOPrice.resx">
+      <DependentUpon>202205181644420_addOPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205181741055_AddStoreProcedure.resx">
+      <DependentUpon>202205181741055_AddStoreProcedure.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
-  </Target>
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>

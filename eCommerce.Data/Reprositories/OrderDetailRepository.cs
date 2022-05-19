@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace eCommerce.Data.Reprositories
 {
-    public interface IOrderDetailRepository
+    public interface IOrderDetailRepository : IRepository<OrderDetail>
     { }
 
     public class OrderDetailRepository : RepositoryBase<OrderDetail>, IOrderDetailRepository

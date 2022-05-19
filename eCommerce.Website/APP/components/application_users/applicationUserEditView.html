@@ -1,0 +1,79 @@
+﻿<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Cập nhất người dùng</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="/admin">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a ui-sref="accounts">Danh mục người dùng</a></li>
+                    <li class="breadcrumb-item active">Cập nhật</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<section class="content">
+    <div class="card card-info">
+        <div class="card-header">
+            <h3 class="card-title">{{account.FullName}}</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form class="form-horizontal" role="form" novalidate name="frmUpdateAccount" ng-submit="updateAccount()">
+            <div class="card-body">
+                <div class="form-group row" ng-class="{ 'has-error' : frmUpdateAccount.name.$invalid && !frmUpdateAccount.name.$pristine }">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Họ tên người dùng</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="name" required reqired-message="Họ tên không được để trống." ng-model="account.FullName">
+                    </div>
+                </div>
+                <div class="form-group row" ng-class="{ 'has-error' : frmUpdateAccount.userName.$invalid && !frmUpdateAccount.userName.$pristine }">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Tài khoản</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="userName" class="form-control"
+                               required reqired-message="Tài khoản không được bỏ trống." ng-model="account.UserName">
+                    </div>
+                </div>
+
+                <div class="form-group row" ng-class="{ 'has-error' : frmUpdateAccount.email.$invalid && !frmUpdateAccount.email.$pristine }">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" name="email" class="form-control"
+                               required reqired-message="Email không được để trống." ng-model="account.Email" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Điện thoại</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="password" class="form-control"
+                               ng-model="account.PhoneNumber" />
+                    </div>
+                </div>
+                <div class="form-group row" ng-class="{ 'has-error' : frmUpdateAccount.birthDate.$invalid && !frmUpdateAccount.birthDate.$pristine }">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Ngày sinh </label>
+                    <div class="col-sm-10">
+                        <input type="date" name="birthDate"as-date class="form-control"
+                               required reqired-message="Ngày sinh không được để trống." ng-model="account.BirthDay">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <label ng-repeat="group in groups" class="mr-3">
+                            <input type="checkbox" checklist-model="account.Groups" checklist-value="group"> {{group.Name}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+                <button ui-sref="application_users" class="btn btn-default ">Quay lại</button>
+                <button type="submit" class="btn btn-success float-right" ng-disabled="frmUpdateAccount.$invalid">Lưu</button>
+            </div>
+            <!-- /.card-footer -->
+        </form>
+    </div>
+</section>

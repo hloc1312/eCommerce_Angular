@@ -1,0 +1,157 @@
+﻿.tag .tagList li {
+    float: left;
+    margin-right: 5px;
+}
+
+ul.support li a:hover {
+    color: #000;
+}
+
+.error {
+    color: red;
+}
+
+.txtInputText {
+    display: block;
+    width: 100% !important;
+    padding: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    margin: 1.5em 0;
+    font-size: 1em;
+    color: #999;
+}
+
+.register-top-grid input[type="password"], .register-bottom-grid input[type="password"] {
+    border: 1px solid #EEE;
+    outline-color: #FF5B36;
+    width: 85%;
+    font-size: 1em;
+    padding: 0.5em;
+    margin: 0.5em 0;
+}
+
+.login-right input[type="password"] {
+    border: 1px solid #DDDBDB;
+    outline-color: #fb4d01;
+    width: 96%;
+    font-size: 0.9em;
+    padding: 10px;
+}
+
+.register-but input[type="submit"] {
+    background: #F97E76;
+    color: #FFF;
+    font-size: 1em;
+    padding: 0.8em 2em;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    display: inline-block;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+}
+
+.product-left .grid-top-chain > .item {
+    border: 1px solid #ddd;
+    width: 250px;
+    height: 455px;
+}
+.product-left .grid-top-chain:first-child{
+    padding-left: 0;
+}
+
+.product-left .grid-top-chain:nth-child(3) {
+    padding-right: 0;
+    
+}
+
+.product-left .item .star {
+    background: url(../images/img-sprite.png)-208px -14px;
+    width: 52px;
+    height: 52px;
+    display: block;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
+
+
+.product-left .grid-top-chain > .item1 {
+    border: 1px solid #ddd;
+    width: 250px;
+    height: 455px;
+}
+
+.colorBlack{
+    background-color:#000;
+    color: #fff;
+}
+
+.product-grid p {
+    display: block;
+    display: -webkit-box;
+    /*height: 16px * 1.3 * 3;*/
+    /*font-size: 16px;*/
+    line-height: 1.3;
+    -webkit-line-clamp: 2; /* số dòng hiển thị */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 3px;
+    margin-top: 10px;
+}
+
+/*.nbs-flexisel-item {
+    white-space: nowrap;
+    width: 150px;
+    border: 1px solid #000000;
+}*/
+
+.nbs-flexisel-item a {
+    line-height: 1.3;
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /*số dòng hiển thị*/
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+ul.login{
+    width:50%;
+}
+
+.contact-form label {
+    display: flex;
+    align-items: center;
+    
+}
+.contact-form label input {
+    height: 20px;
+    /* padding: 10px; */
+    width: 20px;
+    margin-right: 4px;
+    display: inline-block;
+}
+#btnCreateOrder{
+    border: none;
+    padding: 15px 50px;
+    background-color: #f97e76;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all .5s;
+
+}
+
+#btnCreateOrder:hover {
+    background: #1DBAA5;
+}
+
+
+
+
+

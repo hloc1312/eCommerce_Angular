@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace eCommerce.Data.Reprositories
 {
-    public interface ISlideRepository
+    public interface ISlideRepository : IRepository<Slide>
     { }
 
     public class SlideRepository : RepositoryBase<Slide>, ISlideRepository
